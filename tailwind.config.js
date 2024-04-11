@@ -10,7 +10,10 @@ module.exports = {
       },
       backgroundImage: {
         'hero': "url('./img/hero.jpg')",
-      }
+      },
+      fontFamily: {
+        chicago: ['pixChicago'],
+      },
     },
   },
   plugins: [],
