@@ -2,7 +2,7 @@ import folderIcon from "../img/folder.png";
 
 export default function FolderIcon({ folderName }) {
   return (
-    <div className="flex-col w-44 px-8 py-4">
+    <div className="flex-col w-44 px-8 py-4 cursor-pointer">
       <img
         src={folderIcon}
         className="w-14 mx-auto"

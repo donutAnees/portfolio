@@ -2,7 +2,7 @@ import fileIcon from "../img/file.png";
 
 export default function FileIcon({ fileName }) {
   return (
-    <div className="flex-col w-44 px-8 py-4">
+    <div className="flex-col w-44 px-8 py-4 cursor-pointer">
       <img
         src={fileIcon}
         className="w-10 mx-auto"
