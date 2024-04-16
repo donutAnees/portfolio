@@ -13,14 +13,14 @@ const iconComponents = {
   FolderIcon
 };
 
-export default function Sections({ setFileOpened}) {
+export default function Sections({ setFileOpened , setCurrentOpened }) {
   return (
     <div className="pt-10">
       {sections.map((section, index) => {
         const IconComponent = iconComponents[section.icon];
         return (
           <div key={index}>
-            <IconComponent fileName={section.title} folderName={section.title} setFileOpened={setFileOpened}/>
+            <IconComponent fileName={section.title} folderName={section.title} setFileOpened={setFileOpened} setCurrentOpened={setCurrentOpened}/>
           </div>
         );
       })}

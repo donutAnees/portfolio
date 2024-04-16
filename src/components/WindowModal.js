@@ -10,13 +10,13 @@ const WindowModel = forwardRef(function WindowModel(props, ref) {
   };
   return (
     <dialog
-      className="w-2/4 h-3/4 bg-white relative top-5"
+      className="w-2/4 h-3/4 bg-white absolute top-20"
       ref={ref}
       onClose={() => {
         props.setFileOpened(false);
       }}
     >
-      <TopBar WindowName={"Control Panel"} onClose={handleClose}/>
+      <TopBar WindowName={props.name} onClose={handleClose}/>
     </dialog>
   );
 });

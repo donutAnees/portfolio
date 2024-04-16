@@ -7,18 +7,19 @@ export default function Home() {
 
   const modalRef = useRef(null);
   const [fileOpened, setFileOpened] = useState(false);
+  const [currentOpened, setCurrentOpened] = useState("")
 
   useEffect(() => {
     if(fileOpened){
-      modalRef.current.showModal();
+      modalRef.current.show();
     }
   } , [fileOpened])
 
   return (
     <div>
-      <WindowModel ref={modalRef} setFileOpened={setFileOpened}/>
+      <WindowModel ref={modalRef} setFileOpened={setFileOpened} name={currentOpened}/>
       <Hero>
-        <Sections setFileOpened={setFileOpened}/>
+        <Sections setFileOpened={setFileOpened} setCurrentOpened={setCurrentOpened}/>
       </Hero>
     </div>
   );
