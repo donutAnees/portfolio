@@ -6,14 +6,14 @@ const WindowModel = forwardRef(function WindowModel(props, ref) {
     if (ref.current) {
       ref.current.close();
     }
-    props.setFileOpened(false);
+    props.setFolderOpened(false);
   };
   return (
     <dialog
-      className="w-2/4 h-3/4 bg-white absolute top-20"
+      className="w-2/4 h-3/4 bg-white absolute top-20 border-2 border-black"
       ref={ref}
       onClose={() => {
-        props.setFileOpened(false);
+        props.setFolderOpened(false);
       }}
     >
       <TopBar WindowName={props.name} onClose={handleClose}/>

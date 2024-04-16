@@ -1,13 +1,20 @@
 import fileIcon from "../img/file.png";
 
-export default function FileIcon({ fileName , setFileOpened, setCurrentOpened}) {
+export default function FileIcon({
+  fileName,
+  folderOpened,
+  setFolderOpened,
+  setCurrentOpened,
+}) {
+  const handleClick = () => {
+    setFolderOpened(true);
+    setCurrentOpened(fileName);
+  };
+
   return (
     <div
       className="flex-col w-44 px-8 py-4 cursor-pointer"
-      onClick={() => {
-        setFileOpened(true);
-        setCurrentOpened(fileName);
-      }}
+      onClick={handleClick}
     >
       <img
         src={fileIcon}

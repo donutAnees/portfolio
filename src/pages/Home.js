@@ -6,20 +6,20 @@ import WindowModel from "../components/WindowModal";
 export default function Home() {
 
   const modalRef = useRef(null);
-  const [fileOpened, setFileOpened] = useState(false);
+  const [folderOpened, setFolderOpened] = useState(false);
   const [currentOpened, setCurrentOpened] = useState("")
 
   useEffect(() => {
-    if(fileOpened){
+    if(folderOpened){
       modalRef.current.show();
     }
-  } , [fileOpened])
+  } , [folderOpened])
 
   return (
     <div>
-      <WindowModel ref={modalRef} setFileOpened={setFileOpened} name={currentOpened}/>
+      <WindowModel ref={modalRef} setFolderOpened={setFolderOpened} name={currentOpened}/>
       <Hero>
-        <Sections setFileOpened={setFileOpened} setCurrentOpened={setCurrentOpened}/>
+        <Sections folderOpened={folderOpened} setFolderOpened={setFolderOpened} setCurrentOpened={setCurrentOpened}/>
       </Hero>
     </div>
   );

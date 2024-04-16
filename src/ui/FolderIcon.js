@@ -1,14 +1,19 @@
 import folderIcon from "../img/folder.png";
 
-export default function FolderIcon({ folderName, setFileOpened, setCurrentOpened }) {
+export default function FolderIcon({
+  folderName,
+  folderOpened,
+  setFolderOpened,
+  setCurrentOpened,
+}) {
+  const handleClick = () => {
+    setFolderOpened(true);
+    setCurrentOpened(folderName);
+  };
   return (
     <div
       className="flex-col w-44 px-8 py-4 cursor-pointer"
-      onClick={() => {
-        setFileOpened(true);
-        setCurrentOpened(folderName);
-      }}
-      
+      onClick={handleClick}
     >
       <img
         src={folderIcon}
