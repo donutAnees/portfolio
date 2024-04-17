@@ -22,7 +22,7 @@ const WindowModal = forwardRef(function WindowModel(props, ref) {
       <div className="flex flex-col h-full">
       <TopBar WindowName={props.name} onClose={handleClose} />
       <FolderContent />
-      <FolderDisplay />
+      <FolderDisplay containerRef={ref}/>
       </div>
     </dialog>
   );
