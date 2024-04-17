@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import TopBar from "../ui/TopBar";
+import FolderContent from "../ui/FolderContent";
 
 const WindowModel = forwardRef(function WindowModel(props, ref) {
   const handleClose = () => {
@@ -17,6 +18,7 @@ const WindowModel = forwardRef(function WindowModel(props, ref) {
       }}
     >
       <TopBar WindowName={props.name} onClose={handleClose}/>
+      <FolderContent/>
     </dialog>
   );
 });

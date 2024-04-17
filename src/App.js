@@ -10,7 +10,6 @@ const router = createBrowserRouter([
     children: [{ path: "/", element: <Home /> }],
   },
 ]);
-
 function App() {
   return (
     <Suspense fallback={<div>loading...</div>}>
