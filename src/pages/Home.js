@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Hero from "../components/Hero";
 import Sections from "../components/Sections";
-import WindowModel from "../components/WindowModal";
+import WindowModal from "../components/WindowModal";
 
 export default function Home() {
 
@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div>
-      <WindowModel ref={modalRef} setFolderOpened={setFolderOpened} name={currentOpened}/>
+      <WindowModal ref={modalRef} setFolderOpened={setFolderOpened} name={currentOpened}/>
       <Hero>
         <Sections folderOpened={folderOpened} setFolderOpened={setFolderOpened} setCurrentOpened={setCurrentOpened}/>
       </Hero>
