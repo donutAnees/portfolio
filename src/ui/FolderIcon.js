@@ -2,13 +2,12 @@ import folderIcon from "../img/folder.png";
 
 export default function FolderIcon({
   folderName,
-  folderOpened,
   setFolderOpened,
-  setCurrentOpened,
+  setCurrentFolderOpened,
 }) {
   const handleClick = () => {
     setFolderOpened(true);
-    setCurrentOpened(folderName);
+    setCurrentFolderOpened(folderName);
   };
   return (
     <div

@@ -2,13 +2,12 @@ import fileIcon from "../img/file.png";
 
 export default function FileIcon({
   fileName,
-  folderOpened,
-  setFolderOpened,
-  setCurrentOpened,
+  setFileOpened,
+  setCurrentFileOpened,
 }) {
   const handleClick = () => {
-    setFolderOpened(true);
-    setCurrentOpened(fileName);
+    setFileOpened(true);
+    setCurrentFileOpened(fileName);
   };
 
   return (

@@ -20,7 +20,7 @@ const WindowModal = forwardRef(function WindowModel(props, ref) {
       }}
     >
       <div className="flex flex-col h-full">
-      <TopBar WindowName={props.name} onClose={handleClose} />
+      <TopBar WindowName={props.name} onClose={handleClose} isFile={false} />
       <FolderContent />
       <FolderDisplay containerRef={ref}/>
       </div>
