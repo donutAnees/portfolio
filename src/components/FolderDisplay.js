@@ -1,23 +1,18 @@
 import { forwardRef, useRef } from "react";
 
 const FolderDisplay = forwardRef(function FolderDisplay({ props, containerRef }) {
-  const startWidthRef = useRef(null);  // Ref to store the initial width
+  const startWidthRef = useRef(null); // Ref to store the initial width
   const startHeightRef = useRef(null); // Ref to store the initial height
-  const minWidthRef = useRef(null);    // Ref to store the minimum allowed width
-  const minHeightRef = useRef(null);   // Ref to store the minimum allowed height
+  const minWidthRef = useRef(550); // Minimum allowed width to 550px
+  const minHeightRef = useRef(440); // Minimum allowed height to 440px
 
   const handleMouseDown = (e, direction) => {
     e.preventDefault();
 
     const container = containerRef.current;
-
-    if (!startWidthRef.current || !startHeightRef.current) {
-      startWidthRef.current = container.offsetWidth;
-      startHeightRef.current = container.offsetHeight;
-      minWidthRef.current = startWidthRef.current * 0.75;  // Minimum width to 75% of the original width
-      minHeightRef.current = startHeightRef.current * 0.75; // Minimum height to 75% of the original height
-    }
-
+    const containerRect = container.getBoundingClientRect(); // Get the container's position relative to the viewport
+    startWidthRef.current = container.offsetWidth;
+    startHeightRef.current = container.offsetHeight;
     const startX = e.clientX;
     const startY = e.clientY;
     const startWidth = startWidthRef.current;
@@ -29,20 +24,27 @@ const FolderDisplay = forwardRef(function FolderDisplay({ props, containerRef })
       let newWidth = startWidth;
       let newHeight = startHeight;
 
-      if (direction.includes("horizontal")) {
+      if (direction.includes("scale")) {
         newWidth = startWidth + (e.clientX - startX);
-      }
-
-      if (direction.includes("vertical")) {
         newHeight = startHeight + (e.clientY - startY);
       }
 
-      // Apply constraints
+      // Get the window size
+      const maxWidth = window.innerWidth;
+      const maxHeight = window.innerHeight;
+
+      // Calculate maximum height considering the container's offset from the top
+      const maxAllowedHeight = maxHeight - containerRect.top;
+
+      // Apply minimum and maximum constraints for width
       if (newWidth >= minWidth) {
+        if (newWidth > maxWidth) newWidth = maxWidth;
         container.style.width = `${newWidth}px`;
       }
 
+      // Apply minimum and maximum constraints for height considering the container's top offset
       if (newHeight >= minHeight) {
+        if (newHeight > maxAllowedHeight) newHeight = maxAllowedHeight;
         container.style.height = `${newHeight}px`;
       }
     };
@@ -64,10 +66,12 @@ const FolderDisplay = forwardRef(function FolderDisplay({ props, containerRef })
       </div>
       <div className="h-10 flex">
         <div className="w-full border-t-2 border-black"></div>
-        <div
-          className="w-10 h-10 cursor-nwse-resize absolute bottom-0 right-0 border-l-2 border-black"
-          onMouseDown={(e) => handleMouseDown(e, "horizontal vertical")}
-        ></div>
+        <div className="w-11 border-l-2 border-black border-t-2">
+          <div
+            className="w-10 h-10 absolute bottom-0 right-0 cursor-pointer"
+            onMouseDown={(e) => handleMouseDown(e, "scale")}
+          ></div>
+        </div>
       </div>
     </div>
   );
