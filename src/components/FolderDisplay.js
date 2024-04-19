@@ -1,4 +1,5 @@
 import { forwardRef, useRef } from "react";
+import resizeIcon from "../img/resizeIcon.png"
 
 const FolderDisplay = forwardRef(function FolderDisplay({ props, containerRef }) {
   const startWidthRef = useRef(null); // Ref to store the initial width
@@ -68,9 +69,9 @@ const FolderDisplay = forwardRef(function FolderDisplay({ props, containerRef })
         <div className="w-full border-t-2 border-black"></div>
         <div className="w-11 border-l-2 border-black border-t-2">
           <div
-            className="w-10 h-10 absolute bottom-0 right-0 cursor-pointer"
+            className="w-10 h-10 absolute bottom-0 right-0 cursor-pointer flex items-center justify-center"
             onMouseDown={(e) => handleMouseDown(e, "scale")}
-          ></div>
+          ><img src={resizeIcon} alt="" className="w-3/4 h-3/4"/></div>
         </div>
       </div>
     </div>
