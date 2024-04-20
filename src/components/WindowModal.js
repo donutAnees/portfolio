@@ -13,7 +13,7 @@ const WindowModal = forwardRef(function WindowModel(props, ref) {
 
   return (
     <dialog
-      className="w-2/4 h-3/4 bg-white absolute top-20 border-2 border-black"
+      className="w-2/4 h-3/4 bg-white absolute top-20 border-2 border-black z-10"
       ref={ref}
       onClose={() => {
         props.setFolderOpened(false);
