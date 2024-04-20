@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import TopBar from "../ui/TopBar";
+import FileDisplay from "./FileDisplay";
 
 const FileModal = forwardRef(function FileModal(props, ref) {
   const handleClose = () => {
@@ -16,7 +17,10 @@ const FileModal = forwardRef(function FileModal(props, ref) {
         props.setFileOpened(false);
       }}
     >
-      <TopBar WindowName={props.name} onClose={handleClose} isFile={true}/>
+      <div className="flex flex-col h-full">
+        <TopBar WindowName={props.name} onClose={handleClose} isFile={true} />
+        <FileDisplay filename={props.name}/>
+      </div>
     </dialog>
   );
 });
