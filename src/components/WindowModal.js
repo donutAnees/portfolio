@@ -24,6 +24,7 @@ const WindowModal = forwardRef(function WindowModal(props, ref) {
       className="w-2/4 h-3/4 bg-white absolute top-20 border-2 border-black"
       ref={modalRef}
       onClose={handleClose}
+      onClick={props.onClick}
     >
       <div className="flex flex-col h-full">
         <TopBar WindowName={props.name} onClose={handleClose} isFile={false} />
