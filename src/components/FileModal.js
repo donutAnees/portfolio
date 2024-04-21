@@ -1,25 +1,32 @@
-import { forwardRef } from "react";
+import { forwardRef, useRef, useEffect } from "react";
 import TopBar from "../ui/TopBar";
 import FileDisplay from "./FileDisplay";
 
 const FileModal = forwardRef(function FileModal(props, ref) {
-  const handleClose = () => {
-    if (ref.current) {
-      ref.current.close();
+  const modalRef = useRef();
+
+  useEffect(() => {
+    if (modalRef.current) {
+      modalRef.current.show();
     }
-    props.setFileOpened(false);
+  }, []);
+
+  const handleClose = () => {
+    if (modalRef.current) {
+      modalRef.current.close();
+    }
+    props.onClose();
   };
+
   return (
     <dialog
-      className="w-2/4 h-3/4 bg-white absolute top-20 border-2 border-black z-50"
-      ref={ref}
-      onClose={() => {
-        props.setFileOpened(false);
-      }}
+      className="w-2/4 h-3/4 bg-white absolute top-20 border-2 border-black"
+      ref={modalRef}
+      onClose={handleClose}
     >
       <div className="flex flex-col h-full">
         <TopBar WindowName={props.name} onClose={handleClose} isFile={true} />
-        <FileDisplay filename={props.name}/>
+        <FileDisplay filename={props.name} />
       </div>
     </dialog>
   );

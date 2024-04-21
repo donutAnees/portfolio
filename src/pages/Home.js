@@ -5,43 +5,45 @@ import WindowModal from "../components/WindowModal";
 import FileModal from "../components/FileModal";
 
 export default function Home() {
-  const folderModalRef = useRef(null);
-  const fileModalRef = useRef(null);
-  const [folderOpened, setFolderOpened] = useState(false);
-  const [currentFolderOpened, setCurrentFolderOpened] = useState("");
-  const [fileOpened, setFileOpened] = useState(false);
-  const [currentFileOpened, setCurrentFileOpened] = useState("");
+  const [openModals, setOpenModals] = useState([]); // Array to manage multiple open modals
 
-  useEffect(() => {
-    if (fileOpened) {
-      fileModalRef.current.show();
-    }
-  }, [fileOpened]);
+  // Function to open a new modal
+  const openModal = (type, name) => {
+    const newModal = {
+      id: Date.now(),
+      type,
+      name,
+    };
+    setOpenModals((prev) => [...prev, newModal]);
+  };
 
-  useEffect(() => {
-    if (folderOpened) {
-      folderModalRef.current.show();
-    }
-  }, [folderOpened]);
+  // Function to close a modal by ID
+  const closeModal = (id) => {
+    setOpenModals((prev) => prev.filter((modal) => modal.id !== id));
+  };
 
   return (
     <div>
-      <WindowModal
-        ref={folderModalRef}
-        setFolderOpened={setFolderOpened}
-        name={currentFolderOpened}
-      />
-      <FileModal
-        ref={fileModalRef}
-        setFileOpened={setFileOpened}
-        name={currentFileOpened}
-      />
+      {openModals.map((modal) =>
+        modal.type === "folder" ? (
+          <WindowModal
+            key={modal.id}
+            id={modal.id}
+            name={modal.name}
+            onClose={() => closeModal(modal.id)}
+          />
+        ) : (
+          <FileModal
+            key={modal.id}
+            id={modal.id}
+            name={modal.name}
+            onClose={() => closeModal(modal.id)}
+          />
+        )
+      )}
       <Hero>
         <Sections
-          setFolderOpened={setFolderOpened}
-          setCurrentFolderOpened={setCurrentFolderOpened}
-          setFileOpened={setFileOpened}
-          setCurrentFileOpened={setCurrentFileOpened}
+          openModal={openModal}
         />
       </Hero>
     </div>
