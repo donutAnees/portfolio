@@ -130,7 +130,62 @@ export default function FileDisplay({ filename }) {
           </div>
         )
         case "Experience":
-          return <p>This is the EXPERIENCE content.</p>;
+        return (
+            <div className="font-chicago text-xs flex flex-col flex-1 p-4 overflow-y-auto">
+                <div className="flex items-start gap-6">
+                    <img 
+                    src="https://lfx.linuxfoundation.org/wp-content/uploads/2023/01/logo_lfx_nopad.svg" 
+                    alt="LFX Logo" 
+                    width="80" 
+                    height="80" 
+                    className="object-cover"
+                    />
+                    <div className="flex flex-col gap-2">
+                    <p className="font-bold text-sm mb-2">
+                        LFX - Mentee
+                    </p>
+                    
+                    <p className="text-s text-gray-500 mb-2">
+                        August 2024 - Present
+                    </p>
+                    <ul className="list-disc list-inside text-xs leading-relaxed space-y-2">
+                        <li>
+                            Participating in a mentorship program focused on Linux kernel bug fixing, gaining hands-on experience with kernel development and contributing to the linux project.
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div className="flex items-start gap-6 my-4">
+                    <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/280px-Emblem_of_India.svg.png" 
+                    alt="Government of India Logo" 
+                    width="80" 
+                    height="80" 
+                    className="object-cover"
+                    />
+                    <div className="flex flex-col gap-2">
+                    <p className="font-bold text-sm mb-2">
+                        Government of India - Software Engineer Intern
+                    </p>
+                    
+                    <p className="text-s text-gray-500 mb-2">
+                        June to July 2024
+                    </p>
+                    <ul className="list-disc list-inside text-xs leading-relaxed space-y-2">
+                        <li>
+                            Developed a C++ system for clustering wallets using 5 heuristic techniques and multithreading, enhancing system efficiency by over 20%, and facilitated connectivity to MongoDB via the Mongocxx driver, managing over 1000 transactions per minute.
+                        </li>
+                        <li>
+                            Created a system to detect suspicious cryptocurrency wallet addresses using unsupervised machine learning and OSINT techniques, flagging highly traded addresses.
+                        </li>
+                        <li>
+                            Performed network analysis in Python to capture IP addresses of nodes involved in suspicious activities, processing up to 1TB of data daily.
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        );
         default:
           return <p>No content available.</p>;
       }
