@@ -1,7 +1,8 @@
 import { forwardRef, useRef } from "react";
 import resizeIcon from "../img/resizeIcon.png"
+import FileIcon from "../ui/FileIcon";
 
-const FolderDisplay = forwardRef(function FolderDisplay({ props, containerRef }) {
+const FolderDisplay = forwardRef(function FolderDisplay({ openModal, content, containerRef }) {
   const startWidthRef = useRef(null); // Ref to store the initial width
   const startHeightRef = useRef(null); // Ref to store the initial height
   const minWidthRef = useRef(550); // Minimum allowed width to 550px
@@ -62,7 +63,19 @@ const FolderDisplay = forwardRef(function FolderDisplay({ props, containerRef })
   return (
     <div className="flex flex-col flex-1 relative">
       <div className="flex-1 flex">
-        <div className="h-auto w-full border-black"></div>
+      <div className="h-auto w-full border-black flex flex-wrap p-4">
+          {content.map((item, index) => (
+            <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 box-border">
+              <FileIcon 
+                fileName={item.title} 
+                inFolder={true} 
+                onClick={() => {
+                  openModal("file", item.title);
+                }} 
+              />
+            </div>
+          ))}
+        </div>
         <div className="h-full border-black border-l-2 w-11"></div>
       </div>
       <div className="h-10 flex">

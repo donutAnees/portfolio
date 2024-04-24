@@ -1,5 +1,4 @@
 export default function FileDisplay({ filename }) {
-    console.log(filename);
     const renderContent = () => {
       switch (filename) {
         case "About Me":
@@ -146,7 +145,7 @@ export default function FileDisplay({ filename }) {
                     </p>
                     
                     <p className="text-s text-gray-500 mb-2">
-                        August 2024 - Present
+                        September - Present
                     </p>
                     <ul className="list-disc list-inside text-xs leading-relaxed space-y-2">
                         <li>

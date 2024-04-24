@@ -1,4 +1,4 @@
-export default function FolderContent({ contents }) {
+export default function FolderContent() {
     return (
       <>
         <div className="h-7 border-b-2 border-black flex font-chicago text-xs items-center p-3">

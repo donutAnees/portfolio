@@ -3,7 +3,7 @@ import TopBar from "../ui/TopBar";
 import FolderContent from "../ui/FolderContent";
 import FolderDisplay from "./FolderDisplay";
 
-const WindowModal = forwardRef(function WindowModal(props, ref) {
+const FolderModal = forwardRef(function FolderModal(props, ref) {
   const modalRef = useRef();
 
   useEffect(() => {
@@ -29,10 +29,10 @@ const WindowModal = forwardRef(function WindowModal(props, ref) {
       <div className="flex flex-col h-full">
         <TopBar WindowName={props.name} onClose={handleClose} isFile={false} />
         <FolderContent />
-        <FolderDisplay containerRef={modalRef} />
+        <FolderDisplay containerRef={modalRef} content={props.files} openModal={props.openModal}/>
       </div>
     </dialog>
   );
 });
 
-export default WindowModal;
+export default FolderModal;

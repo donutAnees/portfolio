@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Hero from "../components/Hero";
 import Sections from "../components/Sections";
-import WindowModal from "../components/WindowModal";
 import FileModal from "../components/FileModal";
+import FolderModal from "../components/FolderModal";
 
 export default function Home() {
   const [openModals, setOpenModals] = useState([]); // Array to manage multiple open modals
@@ -36,16 +36,25 @@ export default function Home() {
     });
   };
 
+  const projectFolder = [
+    {title:"BIT"}, 
+    {title:"Image Stitching"},
+    {title:"FAST"},
+    {title:"Blockchain Voting"},
+    {title:"ECommerce"}
+  ]
   return (
     <div>
       {openModals.map((modal) =>
         modal.type === "folder" ? (
-          <WindowModal
+          <FolderModal
             key={modal.id}
             id={modal.id}
             name={modal.name}
             onClose={() => closeModal(modal.id)}
             onClick={() => bringToFront(modal.id)} 
+            openModal={openModal}
+            files={projectFolder}
           />
         ) : (
           <FileModal
