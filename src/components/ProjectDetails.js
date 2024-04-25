@@ -4,7 +4,7 @@ export default function ProjectDetails({ project }) {
   return (
     <div className="p-4 font-chicago">
         <div className="flex justify-between">
-        <h1 className="text-l font-bold mb-2">{project.title}</h1>
+        <h1 className="text-lg font-bold mb-2">{project.title}</h1>
         {project.github && (
             <div className="text-center">
             <a
@@ -32,7 +32,7 @@ export default function ProjectDetails({ project }) {
         </div>
       <p className="text-gray-700 mb-2">{project.description}</p>
       <div className="mb-4">
-        <h3 className="text-lg font-semibold mb-2">Technologies Used:</h3>
+        <h3 className="text-l font-semibold mb-2">Technologies Used:</h3>
         <ul className="list-disc pl-5">
           {project.technologies.map((tech, index) => (
             <li key={index} className="py-2">{tech}</li>

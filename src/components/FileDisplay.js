@@ -10,19 +10,19 @@ export default function FileDisplay({ filename }) {
         },
         {
           title: "Image Stitching",
-          description: "Designed and implemented an image stitching system in C++ using the ORB algorithm, achieving seamless stitching and processing images in under a second, making it 100 times faster than SIFT.",
+          description: "Designed and implemented an image stitching system in C++ using the ORB algorithm, achieving seamless stitching and processing images in under a second, making it 100 times faster than SIFT. This project introduced me to computer vision.",
           technologies: ["C++", "OpenCV"],
           github: "https://github.com/donutAnees/image_stitching",
         },
         {
             title: "FAST",
-            description: "Implement the FAST (Feature from Accelerated Segment Test) Algorithm in Image Processing from scratch using C++. The FAST Algorithm is commonly used to identify key features in an image, using a corner detection method.",
+            description: "Implemented the FAST (Feature from Accelerated Segment Test) Algorithm in Image Processing from scratch using C++. The FAST Algorithm is commonly used to identify key features in an image, using a corner detection method and developing it from stratch helped me polish my C++ skills.",
             technologies: ["C++"],
             github: "https://github.com/donutAnees/FAST_implementation",
           },
         {
           title: "Blockchain Voting System",
-          description: "Implemented a secure voting system using smart contracts.",
+          description: "Implemented a secure voting system using smart contracts. Build within 24 hours.",
           technologies: ["ReactJS", "ExpressJS", "Solidity"],
           github: "https://github.com/donutAnees/blockchain_voting",
         },
