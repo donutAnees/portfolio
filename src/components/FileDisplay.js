@@ -1,4 +1,41 @@
+import ProjectDetails from "./ProjectDetails";
+
 export default function FileDisplay({ filename }) {
+    const projects = [
+        {
+          title: "Bitcoin Investigation Tool",
+          description: "A Bitcoin Investigation Tool providing an Interactive Blockchain Transaction Visualizer; a Bitcoin PCAP Decoder; and an Online Wallet Search feature. Very proud of this!",
+          technologies: ["ReactJS", "Python", "Flask", "PostgreSQL"],
+          github: "https://github.com/donutAnees/Bitcoin-Investigation-Tool",
+        },
+        {
+          title: "Image Stitching",
+          description: "Designed and implemented an image stitching system in C++ using the ORB algorithm, achieving seamless stitching and processing images in under a second, making it 100 times faster than SIFT.",
+          technologies: ["C++", "OpenCV"],
+          github: "https://github.com/donutAnees/image_stitching",
+        },
+        {
+            title: "FAST",
+            description: "Implement the FAST (Feature from Accelerated Segment Test) Algorithm in Image Processing from scratch using C++. The FAST Algorithm is commonly used to identify key features in an image, using a corner detection method.",
+            technologies: ["C++"],
+            github: "https://github.com/donutAnees/FAST_implementation",
+          },
+        {
+          title: "Blockchain Voting System",
+          description: "Implemented a secure voting system using smart contracts.",
+          technologies: ["ReactJS", "ExpressJS", "Solidity"],
+          github: "https://github.com/donutAnees/blockchain_voting",
+        },
+        {
+          title: "E-Commerce",
+          description: "Yeah, it's an e-commerce site-mostly—everyone's first web dev project.",
+          technologies: ["ReactJS", "Firebase"],
+          github: "https://github.com/donutAnees/eCommerceProject",
+          links: [
+            { label: "Live Demo", url: "https://react-d4c0e.web.app" }
+          ]
+        },
+      ];
     const renderContent = () => {
       switch (filename) {
         case "About Me":
@@ -185,6 +222,16 @@ export default function FileDisplay({ filename }) {
                 </div>
             </div>
         );
+        case "BIT":
+           return ( <ProjectDetails project={projects[0]}/> )
+        case "Image Stitching":
+            return ( <ProjectDetails project={projects[1]}/> )
+        case "FAST":
+           return ( <ProjectDetails project={projects[2]}/> )
+        case "Blockchain Voting":
+           return ( <ProjectDetails project={projects[3]}/> )
+        case "ECommerce":
+           return ( <ProjectDetails project={projects[4]}/> )
         default:
           return <p>No content available.</p>;
       }
