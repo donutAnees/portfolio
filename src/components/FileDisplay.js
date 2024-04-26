@@ -1,5 +1,47 @@
 import ProjectDetails from "./ProjectDetails";
 
+// About Me
+import linkedinIcon from "../img/linkedin.svg"
+import githubIcon from "../img/github.png"
+import leetcodeIcon from "../img/leetcode.png"
+
+// Skills
+// Languages
+import cIcon from '../img/c.svg';
+import cppIcon from '../img/cplusplus.png';
+import javaIcon from '../img/java.svg';
+import html5Icon from '../img/html5.svg';
+import css3Icon from '../img/css3.svg';
+import javascriptIcon from '../img/javascript.svg';
+import solidityIcon from '../img/solidity.png';
+import bashIcon from "../img/bash.png"
+
+// Frameworks
+import angularIcon from '../img/angular.png';
+import androidIcon from '../img/android.png';
+import djangoIcon from '../img/django.svg';
+import expressIcon from '../img/express.png';
+import flaskIcon from '../img/flask.png';
+import reactIcon from '../img/react.svg';
+import springIcon from '../img/spring.svg';
+import tailwindIcon from '../img/tailwind.svg';
+import qtIcon from '../img/qt.webp'
+
+// Tools
+import dockerIcon from '../img/docker.svg';
+import firebaseIcon from '../img/firebase.svg';
+import gitIcon from '../img/git.svg';
+import herokuIcon from '../img/heroku.svg';
+import linuxIcon from '../img/linux.svg';
+import mongodbIcon from '../img/mongodb.svg';
+import mysqlIcon from '../img/mysql.svg';
+import postgresqlIcon from '../img/postgresql.svg';
+import vagrantIcon from '../img/vagrant.svg';
+
+// Experience
+import LFXLogo from "../img/lfx.svg"
+import governmentLogo from "../img/india.png"
+
 export default function FileDisplay({ filename }) {
     const projects = [
         {
@@ -50,127 +92,124 @@ export default function FileDisplay({ filename }) {
             </p>
             <div className="flex gap-3 justify-center items-center p-5">
               <a href="https://www.linkedin.com/in/mohammed-anees-sde/" target="_blank" rel="noreferrer">
-                  <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="linkedin" width="50" height="50"/>
+                  <img src={linkedinIcon} alt="linkedin" width="50" height="50"/>
               </a>
               <a href="https://leetcode.com/u/donutaneeswastaken/" target="_blank" rel="noreferrer">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/500px-LeetCode_Logo_black_with_text.svg.png" alt="cplusplus" width="120" height="60"/>
+                  <img src={leetcodeIcon} alt="leetcode" width="120" height="60"/>
               </a>
               <a href="https://github.com/donutAnees" target="_blank" rel="noreferrer">
-                  <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="java" width="60" height="60"/>
+                  <img src={githubIcon} alt="github" width="60" height="60"/>
               </a> 
             </div>
             </div>
           );
-        case "Skills":
-          return (
-          <div className="font-chicago text-s flex flex-col gap-4 flex-1 pt-16">
-          <p className="flex flex-col">
-              <div className="text-center pb-4">Languages</div>
-              <div className="flex gap-3 justify-center items-center">
-              <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/>
-              </a>
-              <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/240px-ISO_C%2B%2B_Logo.svg.png" alt="cplusplus" width="35" height="40"/>
-              </a>
-              <a href="https://www.java.com" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/>
-              </a>
-              <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
-              </a>
-              <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
-              </a>
-              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
-              </a>
-              {/* <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/>
-              </a> */}
-              <a href="https://soliditylang.org/" target="_blank" rel="noreferrer">
-                  <img src="https://forum.soliditylang.org/user_avatar/forum.soliditylang.org/system/288/802_2.png" alt="solidity" width="40" height="40"/>
-              </a>
-              <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/240px-Gnu-bash-logo.svg.png" alt="bash" width="80" height="30"/>
-              </a>
+          case "Skills":
+            return (
+              <div className="font-chicago text-s flex flex-col gap-4 flex-1 pt-16">
+                <p className="flex flex-col">
+                  <div className="text-center pb-4">Languages</div>
+                  <div className="flex gap-3 justify-center items-center">
+                    <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
+                      <img src={cIcon} alt="c" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer">
+                      <img src={cppIcon} alt="cplusplus" width="35" height="40"/>
+                    </a>
+                    <a href="https://www.java.com" target="_blank" rel="noreferrer">
+                      <img src={javaIcon} alt="java" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+                      <img src={html5Icon} alt="html5" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
+                      <img src={css3Icon} alt="css3" width="40" height="40"/>
+                    </a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+                      <img src={javascriptIcon} alt="javascript" width="40" height="40"/>
+                    </a>
+                    {/* <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
+                      <img src={typescriptIcon} alt="typescript" width="40" height="40"/>
+                    </a> */}
+                    <a href="https://soliditylang.org/" target="_blank" rel="noreferrer">
+                      <img src={solidityIcon} alt="solidity" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer">
+                      <img src={bashIcon} alt="bash" width="80" height="30"/>
+                    </a>
+                  </div>
+                </p>
+                <p className="flex flex-col">
+                  <div className="text-center pb-4">Frameworks</div>
+                  <div className="flex gap-3 justify-center items-center">
+                    <a href="https://angular.io" target="_blank" rel="noreferrer">
+                      <img src={angularIcon} alt="angularjs" width="100" height="40"/>
+                    </a>
+                    <a href="https://developer.android.com" target="_blank" rel="noreferrer">
+                      <img src={androidIcon} alt="android" width="60" height="40"/>
+                    </a>
+                    <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer">
+                      <img src={djangoIcon} alt="django" width="40" height="40"/>
+                    </a>
+                    <a href="https://expressjs.com" target="_blank" rel="noreferrer">
+                      <img src={expressIcon} alt="express" width="80" height="30"/>
+                    </a>
+                    <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer">
+                      <img src={flaskIcon} alt="flask" width="35" height="40"/>
+                    </a>
+                    <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
+                      <img src={reactIcon} alt="react" width="40" height="40"/>
+                    </a>
+                    <a href="https://spring.io/" target="_blank" rel="noreferrer">
+                      <img src={springIcon} alt="spring" width="40" height="40"/>
+                    </a>
+                    <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
+                      <img src={tailwindIcon} alt="tailwind" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.qt.io/" target="_blank" rel="noreferrer">
+                      <img src={qtIcon} alt="qt" width="40" height="40"/>
+                    </a>
+                  </div>
+                </p>
+                <p className="flex flex-col">
+                  <div className="text-center pb-4">Tools</div>
+                  <div className="flex gap-3 justify-center items-center">
+                    <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
+                      <img src={dockerIcon} alt="docker" width="40" height="40"/>
+                    </a>
+                    <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
+                      <img src={firebaseIcon} alt="firebase" width="40" height="40"/>
+                    </a>
+                    <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+                      <img src={gitIcon} alt="git" width="40" height="40"/>
+                    </a>
+                    <a href="https://heroku.com" target="_blank" rel="noreferrer">
+                      <img src={herokuIcon} alt="heroku" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.linux.org/" target="_blank" rel="noreferrer">
+                      <img src={linuxIcon} alt="linux" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
+                      <img src={mongodbIcon} alt="mongodb" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
+                      <img src={mysqlIcon} alt="mysql" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
+                      <img src={postgresqlIcon} alt="postgresql" width="40" height="40"/>
+                    </a>
+                    <a href="https://www.vagrantup.com/" target="_blank" rel="noreferrer">
+                      <img src={vagrantIcon} alt="vagrant" width="40" height="40"/>
+                    </a>
+                  </div>
+                </p>
               </div>
-            </p>
-            <p className="flex flex-col">
-              <div className="text-center pb-4">Frameworks</div>
-              <div className="flex gap-3 justify-center items-center">
-                <a href="https://angular.io" target="_blank" rel="noreferrer">
-                    <img src="https://angular.dev/assets/images/press-kit/angular_wordmark_gradient.png" alt="angularjs" width="100" height="40"/>
-                </a>
-                <a href="https://developer.android.com" target="_blank" rel="noreferrer">
-                    <img src="https://developer.android.com/static/images/brand/Android_Robot_200.png" alt="android" width="60" height="40"/>
-                </a>
-                <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer">
-                    <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="40" height="40"/>
-                </a>
-                <a href="https://expressjs.com" target="_blank" rel="noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/archive/6/64/20170429090804%21Expressjs.png" alt="express" width="80" height="30"/>
-                </a>
-                <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRubRv-E-PFnEuyYITdMYPqMXrBLOIKUTW8ug&s" alt="flask" width="35" height="40"/>
-                </a>
-                <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
-                </a>
-                <a href="https://spring.io/" target="_blank" rel="noreferrer">
-                    <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="40" height="40"/>
-                </a>
-                <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
-                    <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/>
-                </a>
-                <a href="https://www.qt.io/" target="_blank" rel="noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Qt_logo_2016.svg" alt="qt" width="40" height="40"/>
-                </a>
-                </div>
-            </p >
-            <p className="flex flex-col">
-              <div className="text-center pb-4">Tools</div>
-              <div className="flex gap-3 justify-center items-center">
-              <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
-                <img src="https://www.docker.com/wp-content/uploads/2024/01/icon-docker-square.svg" alt="docker" width="40" height="40"/>
-              </a>
-              <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
-                  <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/>
-              </a>
-              <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-                  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
-              </a>
-              <a href="https://heroku.com" target="_blank" rel="noreferrer">
-                  <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/>
-              </a>
-              <a href="https://www.linux.org/" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/>
-              </a>
-              <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/>
-              </a>
-              <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/>
-              </a>
-              <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
-                  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/>
-              </a>
-              <a href="https://postman.com" target="_blank" rel="noreferrer">
-                  <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/>
-              </a>
-              <a href="https://www.vagrantup.com/" target="_blank" rel="noreferrer">
-                  <img src="https://www.vectorlogo.zone/logos/vagrantup/vagrantup-icon.svg" alt="vagrant" width="40" height="40"/>
-              </a>
-              </div>
-            </p>
-          </div>
-        )
+            );
         case "Experience":
         return (
             <div className="font-chicago text-xs flex flex-col flex-1 p-4 overflow-y-auto">
                 <div className="flex items-start gap-6">
                     <img 
-                    src="https://lfx.linuxfoundation.org/wp-content/uploads/2023/01/logo_lfx_nopad.svg" 
+                    src={LFXLogo}
                     alt="LFX Logo" 
                     width="80" 
                     height="80" 
@@ -193,7 +232,7 @@ export default function FileDisplay({ filename }) {
                 </div>
                 <div className="flex items-start gap-6 my-4">
                     <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/280px-Emblem_of_India.svg.png" 
+                    src={governmentLogo} 
                     alt="Government of India Logo" 
                     width="80" 
                     height="80" 
