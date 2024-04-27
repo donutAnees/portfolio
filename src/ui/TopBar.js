@@ -1,6 +1,6 @@
 export default function TopBar({ WindowName, onClose, isFile }) {
   return (
-    <div className="h-8 border-b-2 border-black flex flex-col justify-center relative">
+    <div className="min-h-8 border-b-2 border-black flex flex-col justify-center relative">
       {!isFile &&
         <div className="h-6 bg-repeat-x bg-windowLines bg-contain relative"></div>
       }

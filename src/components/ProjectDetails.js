@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ProjectDetails({ project }) {
   return (
-    <div className="p-4 font-chicago">
+    <div className="p-4 font-chicago overflow-scroll">
         <div className="flex justify-between">
         <h1 className="text-lg font-bold mb-2">{project.title}</h1>
         {project.github && (

@@ -20,7 +20,7 @@ const FileModal = forwardRef(function FileModal(props, ref) {
 
   return (
     <dialog
-      className="w-2/4 min-h-[75vh] bg-white absolute top-20 border-2 border-black"
+      className=" h-5/6 md:min-h-[75vh] bg-white absolute top-20 border-2 border-black md:w-2/4"
       ref={modalRef}
       onClose={handleClose}
       onClick={props.onClick}

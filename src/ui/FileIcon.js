@@ -13,7 +13,7 @@ export default function FileIcon({
 
   return (
     <div
-      className={`flex-col py-4 ${inFolder !== true ? 'w-44' : 'px-2'}`}
+      className={`flex-col py-4 ${inFolder !== true ? 'w-44' : 'px-2 text-xs'}`}
     >
       <img
         src={fileIcon}

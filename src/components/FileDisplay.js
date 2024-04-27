@@ -82,7 +82,7 @@ export default function FileDisplay({ filename }) {
       switch (filename) {
         case "About Me":
           return (
-            <div className="font-chicago text-s flex flex-col gap-4 p-4">
+            <div className="font-chicago text-s flex flex-col gap-4 p-4 overflow-y-scroll">
             <p>
               Hi, this is Anees! Final year student pursing a Computer Science and Engineering degree at Easwari Engineering College. Over the years, I have built multiple projects, showcasing my proficiency in a variety of programming languages and technologies.
             </p>
@@ -105,10 +105,10 @@ export default function FileDisplay({ filename }) {
           );
           case "Skills":
             return (
-              <div className="font-chicago text-s flex flex-col gap-4 flex-1 pt-16">
+                <div className="font-chicago text-s flex flex-col gap-4 p-4 overflow-y-scroll flex-grow">
                 <p className="flex flex-col">
                   <div className="text-center pb-4">Languages</div>
-                  <div className="flex gap-3 justify-center items-center">
+                  <div className="flex gap-3 justify-center items-center min-h-10">
                     <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
                       <img src={cIcon} alt="c" width="40" height="40"/>
                     </a>
@@ -206,7 +206,7 @@ export default function FileDisplay({ filename }) {
             );
         case "Experience":
         return (
-            <div className="font-chicago text-xs flex flex-col flex-1 p-4 overflow-y-auto">
+            <div className="font-chicago text-s flex flex-col gap-4 p-4 overflow-y-scroll">
                 <div className="flex items-start gap-6">
                     <img 
                     src={LFXLogo}
@@ -275,5 +275,5 @@ export default function FileDisplay({ filename }) {
           return <p>No content available.</p>;
       }
     };
-    return <div className="flex flex-1 p-3">{renderContent()}</div>;
+    return <div className="flex flex-1 p-3 overflow-hidden">{renderContent()}</div>;
   }

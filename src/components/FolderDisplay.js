@@ -63,9 +63,9 @@ const FolderDisplay = forwardRef(function FolderDisplay({ openModal, content, co
   return (
     <div className="flex flex-col flex-1 relative">
       <div className="flex-1 flex">
-      <div className="h-fit w-full border-black flex flex-wrap">
+      <div className="h-fit w-full border-black flex flex-wrap justify-center md:justify-start">
           {content.map((item, index) => (
-            <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 box-border">
+            <div key={index} className="sm:w-1/2 md:w-1/3 lg:w-1/4 md:p-2 box-border">
               <FileIcon 
                 fileName={item.title} 
                 inFolder={true} 
