@@ -1,4 +1,5 @@
 import ProjectDetails from "./ProjectDetails";
+import { useEffect } from "react";
 
 // About Me
 import linkedinIcon from "../img/linkedin.svg"
@@ -42,7 +43,31 @@ import vagrantIcon from '../img/vagrant.svg';
 import LFXLogo from "../img/lfx.svg"
 import governmentLogo from "../img/india.png"
 
+const preloadImages = (imageUrls) => {
+    const promises = imageUrls.map((url) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = resolve;
+      });
+    });
+    return Promise.all(promises);
+  };
+
 export default function FileDisplay({ filename }) {
+      useEffect(() => {
+        const imageUrls = [
+            linkedinIcon, githubIcon, leetcodeIcon,
+            cIcon, cppIcon, javaIcon, html5Icon, css3Icon, javascriptIcon, solidityIcon, bashIcon,
+            angularIcon, androidIcon, djangoIcon, expressIcon, flaskIcon, reactIcon, springIcon, tailwindIcon, qtIcon,
+            dockerIcon, firebaseIcon, gitIcon, herokuIcon, linuxIcon, mongodbIcon, mysqlIcon, postgresqlIcon, vagrantIcon,
+            LFXLogo, governmentLogo
+          ];
+        preloadImages(imageUrls).then(() => {
+          console.log('All images preloaded');
+        },[]);
+      });
+
     const projects = [
         {
           title: "Bitcoin Investigation Tool",
@@ -106,7 +131,7 @@ export default function FileDisplay({ filename }) {
           case "Skills":
             return (
                 <div className="font-chicago text-s flex flex-col gap-4 p-4 overflow-y-scroll flex-grow">
-                <p className="flex flex-col">
+                <div className="flex flex-col">
                   <div className="text-center pb-4">Languages</div>
                   <div className="flex gap-3 justify-center items-center min-h-10">
                     <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
@@ -137,8 +162,8 @@ export default function FileDisplay({ filename }) {
                       <img src={bashIcon} alt="bash" width="80" height="30"/>
                     </a>
                   </div>
-                </p>
-                <p className="flex flex-col">
+                </div>
+                <div className="flex flex-col">
                   <div className="text-center pb-4">Frameworks</div>
                   <div className="flex gap-3 justify-center items-center">
                     <a href="https://angular.io" target="_blank" rel="noreferrer">
@@ -169,8 +194,8 @@ export default function FileDisplay({ filename }) {
                       <img src={qtIcon} alt="qt" width="40" height="40"/>
                     </a>
                   </div>
-                </p>
-                <p className="flex flex-col">
+                </div>
+                <div className="flex flex-col">
                   <div className="text-center pb-4">Tools</div>
                   <div className="flex gap-3 justify-center items-center">
                     <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
@@ -201,7 +226,7 @@ export default function FileDisplay({ filename }) {
                       <img src={vagrantIcon} alt="vagrant" width="40" height="40"/>
                     </a>
                   </div>
-                </p>
+                </div>
               </div>
             );
         case "Experience":
